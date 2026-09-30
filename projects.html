@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+WRITTEN BY: Ronald Wen
+EMAIL: ronaldwen10@gmail.com
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ronald Wen">
+  <meta name="description" content="Case studies of products Ronald Wen has built, plus his merged open-source contributions.">
+  <!-- Bootstrap for the grid and collapsing navbar, Bootstrap Icons for icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts: Playfair Display for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Projects | Ronald Wen</title>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Site navigation: collapses into a menu button below the md breakpoint -->
+  <header>
+    <nav class="navbar navbar-expand-md sticky-top site-nav" aria-label="Main">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Ronald Wen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-links"
+          aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-links">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html" aria-current="page">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container section">
+    <p class="eyebrow">Work</p>
+    <h1>Projects</h1>
+    <p class="lead-text mt-3">
+      Each case study follows the same shape: the problem, who it's for, the insight that made the
+      solution different, and what came out of it.
+    </p>
+
+    <div class="row g-5 mt-2">
+      <!-- Sidebar: sticky table of contents on desktop, a plain list above the content on smaller screens -->
+      <aside class="col-lg-3">
+        <nav class="toc" aria-label="On this page">
+          <p class="eyebrow">On this page</p>
+          <ol>
+            <li><a href="#framelight">Framelight</a></li>
+            <li><a href="#mindtrail">Mindtrail</a></li>
+            <li><a href="#boring-notch">Boring Notch</a></li>
+            <li><a href="#open-source">Open source</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <div class="col-lg-9">
+        <!-- Framelight -->
+        <article class="project-detail pb-5" id="framelight" aria-labelledby="framelight-heading">
+          <div class="d-flex align-items-center gap-3">
+            <img class="project-logo" src="images/framelight-logo.png" alt="Framelight logo" width="56" height="56">
+            <h2 id="framelight-heading" class="mb-0">Framelight</h2>
+          </div>
+          <p class="lead-text mt-3">Real-time composition guidance for people who take photos on their phone, not with a camera.</p>
+
+          <div class="row g-4 mt-1">
+            <div class="col-md-8">
+              <h3 class="h5">The problem</h3>
+              <p>Phone cameras solved exposure, focus, and stabilization years ago. They did nothing for
+                composition, which is still entirely on the person holding the phone. Apps that address it
+                mostly do so after the fact, in an editor, when the moment is already gone.</p>
+              <h3 class="h5">Insight</h3>
+              <p>Feedback is only useful if it arrives before the shutter. A small model that ranks
+                candidate crops of the same scene against each other is small enough to run on-device, live,
+                at interactive speed. No photo ever leaves the phone to get scored.</p>
+            </div>
+            <div class="col-md-4">
+              <dl class="project-meta">
+                <dt>Role</dt>
+                <dd>Product + software engineer</dd>
+                <dt>Status</dt>
+                <dd>Shipping, 2026</dd>
+                <dt>Stack</dt>
+                <dd>React Native, Expo, TFLite, OpenCV, MLKit</dd>
+              </dl>
+              <div class="metric"><strong>224&times;224</strong>on-device model input</div>
+              <div class="metric"><strong>0</strong>network calls to take a photo</div>
+            </div>
+          </div>
+          <a href="https://framelight-website.vercel.app"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Framelight website</a>
+        </article>
+
+        <!-- Mindtrail -->
+        <article class="project-detail py-5 border-top" id="mindtrail" aria-labelledby="mindtrail-heading">
+          <div class="d-flex align-items-center gap-3">
+            <img class="project-logo" src="images/mindtrail-logo.png" alt="Mindtrail logo" width="56" height="56">
+            <h2 id="mindtrail-heading" class="mb-0">Mindtrail</h2>
+          </div>
+          <p class="lead-text mt-3">A research assistant that remembers what you asked it last week and uses it without being told to.</p>
+
+          <div class="row g-4 mt-1">
+            <div class="col-md-8">
+              <h3 class="h5">The problem</h3>
+              <p>Most research agents answer one question well and forget it the moment you close the
+                terminal. The interesting failure is question five: does it know you already asked about
+                vector databases when you now ask how two of them differ?</p>
+              <h3 class="h5">Insight</h3>
+              <p>Memory is only valuable if irrelevant past entries stay out of answers and relevant ones
+                are found reliably. So the evaluation that matters is whether it finds the one relevant
+                prior entry among ten plausible distractors.</p>
+            </div>
+            <div class="col-md-4">
+              <dl class="project-meta">
+                <dt>Role</dt>
+                <dd>Solo: product, retrieval design, full-stack</dd>
+                <dt>Status</dt>
+                <dd>Shipping, 2026</dd>
+                <dt>Stack</dt>
+                <dd>Python, Chroma, SQLite, Groq</dd>
+              </dl>
+              <div class="metric"><strong>10/10</strong>distractor entries passed in retrieval eval</div>
+              <div class="metric"><strong>0</strong>model calls to load the dashboard</div>
+            </div>
+          </div>
+          <a href="https://github.com/ronaldw07/mindtrail"><i class="bi bi-github" aria-hidden="true"></i> Mindtrail on GitHub</a>
+        </article>
+
+        <!-- Boring Notch -->
+        <article class="project-detail py-5 border-top" id="boring-notch" aria-labelledby="boring-notch-heading">
+          <div class="d-flex align-items-center gap-3">
+            <img class="project-logo" src="images/boring-notch-logo.png" alt="Boring Notch logo" width="56" height="56">
+            <h2 id="boring-notch-heading" class="mb-0">Boring Notch</h2>
+          </div>
+          <p class="lead-text mt-3">Shipping real fixes into a macOS utility with thousands of existing users, on someone else's codebase.</p>
+
+          <figure class="project-figure mt-4">
+            <img class="img-fluid" src="images/boring-notch-visualizer.png"
+              alt="The MacBook notch expanded, showing album art, playback controls, and a live audio visualizer reacting to the track"
+              width="654" height="217">
+            <figcaption>The live audio visualizer, driven by the track that's actually playing.</figcaption>
+          </figure>
+
+          <div class="row g-4 mt-1">
+            <div class="col-md-8">
+              <h3 class="h5">The problem</h3>
+              <p>An always-visible utility has an unforgiving bar: any flicker, wrong elapsed time, or
+                dropped state is visible every time you glance at the top of the screen.</p>
+              <h3 class="h5">Insight</h3>
+              <p>Bugs in an always-on app are found by using it, not by reading the code. I ran it as a
+                daily driver, traced each visible glitch to the state transition causing it, and fixed the
+                transition rather than the symptom.</p>
+            </div>
+            <div class="col-md-4">
+              <dl class="project-meta">
+                <dt>Role</dt>
+                <dd>Contributor: Swift/macOS engineering</dd>
+                <dt>Status</dt>
+                <dd>In progress, 2026</dd>
+                <dt>Stack</dt>
+                <dd>Swift, SwiftUI, AppKit</dd>
+              </dl>
+            </div>
+          </div>
+          <a href="https://github.com/ronaldw07/boring.notch"><i class="bi bi-github" aria-hidden="true"></i> My Boring Notch fork on GitHub</a>
+        </article>
+
+        <!-- Open source: an accessible data table with caption and header scopes -->
+        <section class="project-detail pt-5 border-top" id="open-source" aria-labelledby="open-source-heading">
+          <h2 id="open-source-heading">Open source</h2>
+          <p class="lead-text">Merged contributions into codebases owned by someone else.</p>
+          <div class="table-responsive">
+            <table class="table contrib-table align-middle mb-0">
+              <caption>Merged pull requests, by repository</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Repository</th>
+                  <th scope="col">Contribution</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Pull request</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">icssc/AntAlmanac</th>
+                  <td>Schedule selector on the mobile Added Pane</td>
+                  <td class="status-merged"><i class="bi bi-check-circle" aria-hidden="true"></i> Merged</td>
+                  <td><a href="https://github.com/icssc/AntAlmanac/pull/1428">PR 1428</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">icssc/AntAlmanac</th>
+                  <td>Standardized mobile breakpoint detection</td>
+                  <td class="status-merged"><i class="bi bi-check-circle" aria-hidden="true"></i> Merged</td>
+                  <td><a href="https://github.com/icssc/AntAlmanac/pull/1432">PR 1432</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">google/ml-flashpoint</th>
+                  <td>Abstracted torch.distributed APIs in CheckpointLoader</td>
+                  <td class="status-merged"><i class="bi bi-check-circle" aria-hidden="true"></i> Merged</td>
+                  <td><a href="https://github.com/google/ml-flashpoint/pull/47">PR 47</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">google/ml-flashpoint</th>
+                  <td>Extracted local-aware Megatron save logic</td>
+                  <td class="status-merged"><i class="bi bi-check-circle" aria-hidden="true"></i> Merged</td>
+                  <td><a href="https://github.com/google/ml-flashpoint/pull/43">PR 43</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+      <p class="mb-0">&copy; 2026 Ronald Wen</p>
+      <p class="mb-0">
+        <a href="https://github.com/ronaldw07">GitHub</a>
+        <a href="https://www.linkedin.com/in/ronaldwen/">LinkedIn</a>
+        <a href="http://validator.w3.org/check?uri=referer">W3C validator</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
