@@ -45,8 +45,10 @@ Responsiveness: on desktop the home page shows the hero text beside the photo an
 
 3. Did you ignore any of the warnings or errors presented by the accessibility checker? If so, why does this not seem like an accessibility concern? If it's useful, you can consolidate your thoughts on multiple warnings/errors if the rationale is similar.
 
-There were no errors. The CSS validator reports warnings that it cannot statically check values set through CSS custom properties (variables). These are not accessibility or validity problems; every variable is defined in :root and all color pairs were checked for contrast by hand.
-Any "potential problems" from the checker about link text or images were reviewed: every image has alt text describing its content, and link text says where the link goes (for example "Read the Framelight case study" instead of "click here").
+There were no errors and no contrast errors in WAVE on any page, and no HTML or CSS errors. I reviewed the remaining alerts/warnings and left them:
+- "Redundant link" (WAVE, all pages): the "Ronald Wen" brand and the "Home" nav item both go to index.html, and on the contact page the footer repeats the GitHub/LinkedIn links. Linking the brand to home is a convention users expect, and the footer links are a consistent landmark across pages, so the repetition helps navigation rather than hurting it.
+- "Long alternative text" (WAVE, projects page): the Boring Notch screenshot's alt text is long on purpose because it describes several parts of the interface (album art, controls, visualizer) that a screen reader user would otherwise miss.
+- CSS validator warnings: validating by page URL also checks the Bootstrap stylesheet loaded from the CDN, which uses vendor-prefixed properties and CSS variables the validator flags as warnings. These are in third-party code, not my stylesheet, and they are not errors.
 
 4. How long, in hours, did it take you to complete this assignment?
 
