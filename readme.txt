@@ -52,7 +52,7 @@ There were no errors and no contrast errors in WAVE on any page, and no HTML or 
 
 4. How long, in hours, did it take you to complete this assignment?
 
-*** FILL IN ***
+2 hours
 
 5. What online resources did you consult when completing this assignment? (list specific URLs, describe queries to Generative AI, or use of AI-based code completion)
 
