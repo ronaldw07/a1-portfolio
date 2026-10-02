@@ -52,7 +52,7 @@ There were no errors and no contrast errors in WAVE on any page, and no HTML or 
 
 4. How long, in hours, did it take you to complete this assignment?
 
-2 hours
+3 hours
 
 5. What online resources did you consult when completing this assignment? (list specific URLs, describe queries to Generative AI, or use of AI-based code completion)
 
@@ -72,4 +72,4 @@ None.
 7. Is there anything special we need to know in order to run your code?
 
 No. Open index.html in a browser. Bootstrap, Bootstrap Icons, and Google Fonts load from CDNs, so an internet connection is needed for full styling. All images use relative paths.
-The written content (project descriptions, bio) is adapted from my personal portfolio site, but this HTML/CSS version was built from the course starter code for this assignment.
+The design (colors, fonts, layout) and text are based on my personal portfolio, which is a Next.js site. I rebuilt it in plain HTML, Bootstrap, and CSS for this assignment, starting from the course starter repo.
